@@ -25,12 +25,12 @@
     transform: translateX(-50%);
 
 }
-.bar-top-left {
+.top-left-bar {
     height: 50px;
     width: 100%;
     background-color: CornflowerBlue ;
 }
-.bar-top-right {
+.top-right-bar {
     height: 50px;
     width: 100%;
     background-color: CornflowerBlue;
@@ -77,4 +77,14 @@
 .risposta {
     background-color: NavajoWhite;
     float: right;
+}
+.footer {
+    display: flex;
+
+}
+.footer {
+    width: 100%;
+    height: 70px;
+    background-color: Azure;
+
 }
