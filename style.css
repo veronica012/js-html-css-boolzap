@@ -23,17 +23,24 @@
     top: 5%;
     left: 50%;
     transform: translateX(-50%);
+
 }
-.top {
+.bar-top-left {
     height: 50px;
     width: 100%;
     background-color: CornflowerBlue ;
+}
+.bar-top-right {
+    height: 50px;
+    width: 100%;
+    background-color: CornflowerBlue;
 }
 .contatti {
     width: 300px;
     height: 100%;
     background-color: AntiqueWhite;
     float: left;
+
 }
 .persona {
     width: 100%;
@@ -48,8 +55,26 @@
     border-bottom: 1px solid black;
 
 }
-.chat {
+.conversazione {
     width: 600px;
     height: 100%;
     float: left;
+    overflow-y: auto;
+}
+.container-chat {
+    width: 90%;
+    margin: auto;
+}
+.messaggio {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: coral;
+    margin-top: 30px;
+    clear: both;
+
+}
+.risposta {
+    background-color: NavajoWhite;
+    float: right;
 }
