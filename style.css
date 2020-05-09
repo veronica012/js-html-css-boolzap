@@ -43,6 +43,10 @@ font-family: 'Open Sans', sans-serif;
     color:  #9de1fe;
     font-size: 20px;
 }
+.fa-chevron-right {
+    color:#4a4a4a ;
+    padding: 0;
+}
 .contatti {
     width: 400px;
     height: 100%;
