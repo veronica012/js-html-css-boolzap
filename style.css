@@ -191,17 +191,17 @@ i {
         padding: 5px;
 }
 .icona-footer {
-        width: 5%;
-        height: 100%;
-        float: left;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
+    width: 5%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.icona-footer i {
+.icona-footer i{
     color: #919191;
 }
+
 .fa-check {
     padding: 0;
     color:#919191;
@@ -212,4 +212,7 @@ i {
 }
 .template {
     display: none;
+}
+.messaggi-sinistra p, .messaggi-destra p {
+    text-align: right;
 }
