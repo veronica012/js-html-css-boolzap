@@ -64,7 +64,6 @@ font-family: 'Open Sans', sans-serif;
 .persona:hover {
     background-color: #f0f0f0;
 }
-
 .nome {
     color: black;
     font-weight: bold;
@@ -95,12 +94,12 @@ font-family: 'Open Sans', sans-serif;
     height: 80%;
     width: 90%;
     background-color: white;
+    padding: 5px;
 }
 .input span, .input i{
     font-size: 13px;
     color: #919191;
 }
-
 .left, .center {
     float: left;
     padding: 5px;
