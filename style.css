@@ -146,6 +146,7 @@ img {
     margin-top: 30px;
     clear: both;
     padding: 5px;
+    font-size: 10px;
 }
 .risposta {
     background-color: #dcf8c6;
@@ -202,4 +203,7 @@ i {
 }
 .persona:hover .fa-check {
     visibility: visible;
+}
+.template {
+    display: none;
 }
