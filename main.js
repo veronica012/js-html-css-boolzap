@@ -69,13 +69,21 @@ $('.footer .input').blur(function(){
 $('.cerca i').click(function() {
     var testo_input = $('.cerca input').val().trim().toLowerCase();
     console.log(testo_input);
-    $('.lista .contatto').each(function(){
-        var testo_lista = $(this).find('.nome').text().toLowerCase();
-        if(testo_lista.includes(testo_input)) {
-            $(this).show();
-        } else {
-            $(this).hide();
-        }
-    });
-
+    if(testo_input != '') {
+        $('.lista .contatto').each(function(){
+            var testo_lista = $(this).find('.nome').text().toLowerCase();
+            if(testo_lista.includes(testo_input)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    } else {
+        //se l'utente digita solo spazi mostri l'intera lista dei contatti
+        $('.lista .contatto').show();
+    }
 });
+
+// $('.cerca i').click(function(){
+//     $('.fa-search').removeClass('fa-search').addClass('fa-times')
+// });
