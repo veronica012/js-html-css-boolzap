@@ -1,5 +1,5 @@
 //funzione dichiarata fuori dagli eventi
-function myFunction() {
+function risposta_automatica() {
     var risposta = 'ok';
     var risposta_interlocutore = $('.template .messaggio').clone();
     risposta_interlocutore.text(risposta);
@@ -70,14 +70,12 @@ $('.cerca i').click(function() {
     var testo_input = $('.cerca input').val().trim().toLowerCase();
     console.log(testo_input);
     $('.lista .contatto').each(function(){
-        var testo_lista = $(this).text().toLowerCase();
-        if(testo_lista != testo_input) {
-            $(this).hide();
-        } else {
+        var testo_lista = $(this).find('.nome').text().toLowerCase();
+        if(testo_lista.includes(testo_input)) {
             $(this).show();
+        } else {
+            $(this).hide();
         }
     });
-
-
 
 });
