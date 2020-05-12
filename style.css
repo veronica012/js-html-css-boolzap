@@ -26,6 +26,7 @@ font-family: 'Open Sans', sans-serif;
     height: 60px;
     width: 100%;
     background-color: #ededed;
+    cursor: default;
 }
 .header-left {
     border-right: 1px solid #919191;
@@ -215,4 +216,11 @@ i {
 }
 .messaggi-sinistra p, .messaggi-destra p {
     text-align: right;
+    margin-top: 10px;
+}
+.fa-check-double {
+    margin-left: 5px;
+    padding: 0;
+    font-size: 15px;
+    color: #9de1fe;
 }
