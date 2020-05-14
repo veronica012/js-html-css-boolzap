@@ -125,12 +125,12 @@ $('.contatto').click(function(){
 
 //Milestone3 parte 2
 //intercettare il click sull'icona del menu_dropdown
-$('.container-conversazione').on('click', '#icona-menu-dropdown', function(){
+$('.container-conversazione').on('click', '.icona-menu-dropdown', function(){
 //visualizzo il menu del messaggio su cui ho cliccato
     $(this).siblings('.menu-dropdown').toggle();
 });
 //intercettare il click su cancella messaggio
-$('.container-conversazione').on('click', '#cancella', function(){
+$('.container-conversazione').on('click', '.cancella', function(){
     //cancella il messaggio
-    
+    $(this).parents('.messaggio').remove();
 });
