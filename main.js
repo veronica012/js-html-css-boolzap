@@ -5,23 +5,26 @@ function risposta_automatica() {
     risposta_interlocutore.find('.testo-messaggio').text(risposta);
     $('.container-conversazione.active').append(risposta_interlocutore);
 }
+function invia_messaggio() {
+    var testo_utente = $('#scrivi_messaggio').val();
+   console.log(testo_utente);
+if (testo_utente.trim() != '') {
+//creare un template in html (css display: none)
+      var nuovo_messaggio = $('.template .messaggio-ricevuto').clone();
+      nuovo_messaggio.find('.testo-messaggio-ricevuto').text(testo_utente);
+      $('.container-conversazione.active').append(nuovo_messaggio);
+// //dopo aver inviato il messaggio l'input torna vuoto
+      testo_utente = $('.input').val(' ');
+}
+}
 
 //Milestone1 : intercetto il click sull'icona che permette di inviare il messaggio
 $('.icona-footer').click(function() {
-//creo la variabile per salvare il risultato di della funzione .val
-    var testo_utente = $('#scrivi_messaggio').val();
-    console.log(testo_utente);
-    if (testo_utente.trim() != '') {
-//creare un template in html (css display: none)
-        var nuovo_messaggio = $('.template .messaggio-ricevuto').clone();
-        nuovo_messaggio.find('.testo-messaggio-ricevuto').text(testo_utente);
-        $('.container-conversazione.active').append(nuovo_messaggio);
-//dopo aver inviato il messaggio l'input torna vuoto
-        testo_utente = $('.input').val(' ');
 
+        invia_messaggio();
 //Milestone2, 1 : ad ogni messaggio ricevuto (in verde) l'interlocutore risponde ok dopo 1 secondo
         setTimeout(risposta_automatica, 1000);
-}
+
     });
 //Inviare il messaggio premendo sul tasto inviato
 $('.footer .input').keyup(function(event){
@@ -29,16 +32,10 @@ $('.footer .input').keyup(function(event){
         var testo_utente = $('#scrivi_messaggio').val();
         console.log(testo_utente);
 
-        if (testo_utente.trim() != '') {
-        // creare un template in html (css display: none)
-            var nuovo_messaggio = $('.template .messaggio-ricevuto').clone();
-            nuovo_messaggio.find('.testo-messaggio-ricevuto').text(testo_utente);
-            $('.container-conversazione.active').append(nuovo_messaggio);
-        //dopo aver inviato il messaggio l'input torna vuoto
-            testo_utente = $('.input').val(' ');
+            invia_messaggio();
         //Milestone2, 1 : ad ogni messaggio ricevuto (in verde) l'interlocutore risponde ok dopo 1 secondo
-                setTimeout(risposta_automatica, 1000);
-        }
+            setTimeout(risposta_automatica, 1000);
+
     }
 });
 
@@ -125,7 +122,7 @@ $('.contatto').click(function(){
 
 //Milestone3 parte 2
 //intercettare il click sull'icona del menu_dropdown
-$('.container-conversazione').on('click', '.icona-menu-dropdown', function(){
+$('.container-conversazione').on('click', '.messaggio .fa-check', function(){
 //visualizzo il menu del messaggio su cui ho cliccato
     $(this).siblings('.menu-dropdown').toggle();
 });
@@ -133,4 +130,15 @@ $('.container-conversazione').on('click', '.icona-menu-dropdown', function(){
 $('.container-conversazione').on('click', '.cancella', function(){
     //cancella il messaggio
     $(this).parents('.messaggio').remove();
+});
+//intercettare il click sull'icona del menu_dropdown
+$('.container-conversazione').on('click', '.messaggio- .fa-check', function(){
+//visualizzo il menu del messaggio su cui ho cliccato
+    $(this).siblings('.menu-dropdown').toggle();
+});
+//intercettare il click su cancella messaggio
+$('.container-conversazione').on('click', '.cancella', function(){
+    //cancella il messaggio
+    $(this).parents('.messaggio-ricevuto').remove();
+    // $(this).parents('.messaggio-ricevuto').text('messaggio eliminato');
 });
