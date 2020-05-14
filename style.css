@@ -62,6 +62,9 @@ font-family: 'Open Sans', sans-serif;
     height: 70px;
     border-bottom: 1px solid #f0f0f0 ;
 }
+.contatto.active {
+    background-color: #f0f0f0;
+}
 .contatto:hover {
     background-color: #f0f0f0;
 }
@@ -72,12 +75,15 @@ font-family: 'Open Sans', sans-serif;
 .anteprima-msg {
     font-size: 13px;
 }
-.anteprima-msg a {
+.attiva_notifiche a {
     text-decoration: none;
     color: #4a4a4a;
 }
-.anteprima-msg a:hover {
+.attiva_notifiche a:hover {
     text-decoration: underline;
+}
+.attiva_notifiche {
+    font-size: 13px;
 }
 .cerca {
     width: 100%;
@@ -132,7 +138,7 @@ img {
     height: calc(100% - 120px);
     overflow-y: auto;
 }
-.container-chat{
+.container-conversazione{
     height: calc(100% - 120px);
     margin: auto;
     overflow-y: auto;
@@ -148,7 +154,7 @@ img {
     padding: 5px;
     font-size: 10px;
 }
-.messaggio-ricevuto{
+.messaggio-ricevuto {
     width: 150px;
     height: 50px;
     border-radius: 10px;
@@ -208,7 +214,7 @@ i {
     color:#919191;
     visibility: hidden;
 }
-.persona:hover .fa-check {
+.contatto:hover .fa-check {
     visibility: visible;
 }
 .template {
@@ -218,9 +224,44 @@ i {
     text-align: right;
     margin-top: 10px;
 }
+.messaggi-destra .messaggio-ricevuto.active {
+    display: block;
+}
 .fa-check-double {
     margin-left: 5px;
     padding: 0;
     font-size: 15px;
     color: #9de1fe;
+}
+#icona-menu-dropdown {
+    visibility: visible;
+    float: right;
+    padding: 5px;
+
+}
+.menu-dropdown {
+    display: none;
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid #919191;
+    position: absolute;
+
+}
+.menu-dropdown p {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-dropdown p:first-child {
+    border-bottom: 1px solid #919191;
+}
+.container-conversazione {
+    display: none;
+}
+.container-conversazione.active {
+    display: block;
 }
