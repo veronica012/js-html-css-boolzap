@@ -154,6 +154,7 @@ img {
     padding: 5px;
     font-size: 10px;
 }
+
 .messaggio-ricevuto {
     width: 150px;
     height: 50px;
@@ -164,6 +165,10 @@ img {
     font-size: 10px;
     background-color: #dcf8c6;
     float: right;
+}
+.messaggio p, .messaggio-ricevuto p {
+    margin-top: 10px;
+    text-align: right;
 }
 .footer {
     width: 100%;
@@ -220,11 +225,7 @@ i {
 .template {
     display: none;
 }
-.messaggi-sinistra p, .messaggi-destra p {
-    text-align: right;
-    margin-top: 10px;
-}
-.messaggi-destra .messaggio-ricevuto.active {
+.messaggio-ricevuto.active {
     display: block;
 }
 .fa-check-double {
@@ -233,11 +234,10 @@ i {
     font-size: 15px;
     color: #9de1fe;
 }
-#icona-menu-dropdown {
+.messaggio .fa-check, .messaggio-ricevuto .fa-check {
     visibility: visible;
     float: right;
     padding: 5px;
-
 }
 .menu-dropdown {
     display: none;
