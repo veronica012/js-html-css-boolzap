@@ -246,7 +246,7 @@ i {
     background-color: white;
     border: 1px solid #919191;
     position: absolute;
-
+    margin-top: 20px;
 }
 .menu-dropdown p {
     width: 100%;

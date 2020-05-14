@@ -92,7 +92,7 @@ $('.cerca i').click(function() {
 // });
 //if testo_input.length >=3
 
-//Milestone3
+//Milestone3 parte 1
 //intercetto il click sul contatto
 $('.contatto').click(function(){
     //recupero il valore data chat del contatto
@@ -113,7 +113,7 @@ $('.contatto').click(function(){
     var nome_contatto = $(this).find('.nome').text();
     console.log('il nome è ' + nome_contatto);
     //inserisco il nome corrispondente alla chat nell'header
-    $('.header-right .center').text(nome_contatto);
+    $('.header-right .center .nome').text(nome_contatto);
     //recupero src dell'immagine del contatto
     var src_immagine = $(this).find('.img img').attr('src');
     console.log('src immagine = ' + src_immagine);
@@ -121,4 +121,16 @@ $('.contatto').click(function(){
     $('.header-right .left img').attr('src', src_immagine);
 
 // $('.container-conversazione[data-chat= "'+ data_contatto +'"]').addClass('active');
+});
+
+//Milestone3 parte 2
+//intercettare il click sull'icona del menu_dropdown
+$('.container-conversazione').on('click', '#icona-menu-dropdown', function(){
+//visualizzo il menu del messaggio su cui ho cliccato
+    $(this).siblings('.menu-dropdown').toggle();
+});
+//intercettare il click su cancella messaggio
+$('.container-conversazione').on('click', '#cancella', function(){
+    //cancella il messaggio
+    
 });
