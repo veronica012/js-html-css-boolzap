@@ -17,7 +17,27 @@ if (testo_utente.trim() != '') {
       testo_utente = $('.input').val(' ');
 }
 }
+//orario ultimo accesso
+$('.header-right .ultimo_accesso').text(orario());
 
+function orario() {
+    var giorno = new Date;
+    console.log(giorno);
+    var ora = giorno.getHours();
+    console.log(ora);
+    var minuti = giorno.getMinutes();
+    console.log(minuti);
+    if (minuti < 10){
+        var addZero = giorno.getHours() + ":0" + giorno.getMinutes();
+        console.log(addZero);
+    } else {
+        var addZero = giorno.getHours() + ":" + giorno.getMinutes();
+        console.log(addZero);
+
+    }
+    return addZero
+}
+orario();
 //Milestone1 : intercetto il click sull'icona che permette di inviare il messaggio
 $('.icona-footer').click(function() {
 
@@ -26,7 +46,7 @@ $('.icona-footer').click(function() {
         setTimeout(risposta_automatica, 1000);
 
     });
-//Inviare il messaggio premendo sul tasto inviato
+//Inviare il messaggio premendo sul tasto invio
 $('.footer .input').keyup(function(event){
     if(event.which == 13) {
         var testo_utente = $('#scrivi_messaggio').val();
