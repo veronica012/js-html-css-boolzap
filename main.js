@@ -4,6 +4,7 @@ function risposta_automatica() {
     var risposta_interlocutore = $('.template .messaggio').clone();
     risposta_interlocutore.find('.testo-messaggio').text(risposta);
     $('.container-conversazione.active').append(risposta_interlocutore);
+    risposta_interlocutore.find('.orario-messaggio').text(orario());
 }
 function invia_messaggio() {
     var testo_utente = $('#scrivi_messaggio').val();
@@ -13,6 +14,7 @@ if (testo_utente.trim() != '') {
       var nuovo_messaggio = $('.template .messaggio-ricevuto').clone();
       nuovo_messaggio.find('.testo-messaggio-ricevuto').text(testo_utente);
       $('.container-conversazione.active').append(nuovo_messaggio);
+      nuovo_messaggio.find('.orario-messaggio').text(orario());
 // //dopo aver inviato il messaggio l'input torna vuoto
       testo_utente = $('.input').val(' ');
 }
@@ -37,13 +39,14 @@ function orario() {
     }
     return addZero
 }
-orario();
+
 //Milestone1 : intercetto il click sull'icona che permette di inviare il messaggio
 $('.icona-footer').click(function() {
 
         invia_messaggio();
 //Milestone2, 1 : ad ogni messaggio ricevuto (in verde) l'interlocutore risponde ok dopo 1 secondo
         setTimeout(risposta_automatica, 1000);
+
 
     });
 //Inviare il messaggio premendo sul tasto invio
