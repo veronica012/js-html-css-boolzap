@@ -1,24 +1,50 @@
 //funzione dichiarata fuori dagli eventi
 function risposta_automatica() {
     var risposta = 'ok';
-    var risposta_interlocutore = $('.template .messaggio').clone();
-    risposta_interlocutore.find('.testo-messaggio').text(risposta);
-    $('.container-conversazione.active').append(risposta_interlocutore);
-    risposta_interlocutore.find('.orario-messaggio').text(orario());
+    var template_html = $('#messaggi').html();
+    var template_function = Handlebars.compile(template_html);
+    var data = {
+        testo : risposta,
+        orario : orario()
+    }
+    var html = template_function(data);
+    $('.container-conversazione.active').append(html);
+    $('.to-change').addClass('messaggio');
+    $('.to-change').removeClass('to-change');
+    // var risposta_interlocutore = $('.template .messaggio').clone();
+    // risposta_interlocutore.find('.testo-messaggio').text(risposta);
+    // $('.container-conversazione.active').append(risposta_interlocutore);
+    // risposta_interlocutore.find('.orario-messaggio').text(orario());
 }
 function invia_messaggio() {
     var testo_utente = $('#scrivi_messaggio').val();
    console.log(testo_utente);
-if (testo_utente.trim() != '') {
-//creare un template in html (css display: none)
-      var nuovo_messaggio = $('.template .messaggio-ricevuto').clone();
-      nuovo_messaggio.find('.testo-messaggio-ricevuto').text(testo_utente);
-      $('.container-conversazione.active').append(nuovo_messaggio);
-      nuovo_messaggio.find('.orario-messaggio').text(orario());
-// //dopo aver inviato il messaggio l'input torna vuoto
-      testo_utente = $('.input').val(' ');
+// if (testo_utente.trim() != '') {
+// //creare un template in html (css display: none)
+//       var nuovo_messaggio = $('.template .messaggio-ricevuto').clone();
+//       nuovo_messaggio.find('.testo-messaggio-ricevuto').text(testo_utente);
+//       $('.container-conversazione.active').append(nuovo_messaggio);
+//       nuovo_messaggio.find('.orario-messaggio').text(orario());
+// // //dopo aver inviato il messaggio l'input torna vuoto
+//       testo_utente = $('.input').val(' ');
+// }
+
+var template_html = $('#messaggi').html();
+var template_function = Handlebars.compile(template_html);
+var data = {
+    testo : testo_utente,
+    orario : orario()
 }
+var html = template_function(data);
+$('.container-conversazione.active').append(html);
+$('.to-change').addClass('messaggio-ricevuto');
+$('.to-change').removeClass('to-change');
 }
+
+
+
+
+
 //orario ultimo accesso
 $('.header-right .ultimo_accesso').text(orario());
 
@@ -128,6 +154,7 @@ $('.contatto').click(function(){
             $(this).addClass('active');
             console.log(this);
         }
+
     });
     //recupero il nome del contatto su cui ho cliccato
     var nome_contatto = $(this).find('.nome').text();

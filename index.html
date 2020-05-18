@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/c3ece0a22b.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     </head>
     <body>
         <div class="container">
@@ -191,8 +192,20 @@
                 </div>
             </div>
 
+            <!--TEMPLATE CON HANDLEBARS-->
+            <script id="messaggi" type="text/x-handlebars-template">
+                 <div class="messaggio to-change">
+                    <span class="testo-messaggio">{{ testo }}</span>
+                    <i class="fas fa-check"></i>
+                    <div class="menu-dropdown">
+                        <p>Info messaggi</p>
+                        <p class="cancella">Cancella Messaggio</p>
+                    </div>
+                    <p><span class="orario-messaggio">{{ orario }}</span><i class="fas fa-check-double"></i></p>
+                </div>
+            </script>
             <!--template -->
-            <div class="template">
+            <!-- <div class="template">
                 <div class="messaggio-ricevuto">
                      <span class="testo-messaggio-ricevuto"></span>
                      <i class="fas fa-check"></i>
@@ -211,7 +224,7 @@
                     </div>
                     <p><span class="orario-messaggio"></span><i class="fas fa-check-double"></i></p>
                 </div>
-            </div>
+            </div> -->
 
         <script src="main.js" charset="utf-8"></script>
     </body>
