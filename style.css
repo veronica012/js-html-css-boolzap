@@ -156,6 +156,7 @@ img {
     clear: both;
     padding: 5px;
     font-size: 10px;
+    
 }
 
 .messaggio-ricevuto {
@@ -168,6 +169,7 @@ img {
     font-size: 10px;
     background-color: #dcf8c6;
     float: right;
+
 }
 .messaggio p, .messaggio-ricevuto p {
     margin-top: 10px;
